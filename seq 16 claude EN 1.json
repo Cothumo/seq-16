@@ -1,0 +1,376 @@
+{
+    "id": "b39b2508-3cb4-4b2a-a1d7-3c5771764f59",
+    "modifiedAt": "2026-05-31T08:41:56.013Z",
+    "createdAt": "2026-05-31T07:31:53.381Z",
+    "name": "seq 16 Codex EN",
+    "description": "Click here to add description",
+    "type": "EN16",
+    "version": {
+        "major": "1",
+        "minor": "6",
+        "patch": "5"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function sq() counter=(counter+1)%(step_len*2) local s=counter//2 if counter%2==0 then glp((s-1)%step_len,2,0) glp(s,2,prob_edit and 0 or 255) gw=-1 wr(s,pd) pd={} gr=armed and s or -1 local m=ele[s]:bva()>0 and rec[s+1]>=0 and (eu==0 or em[s+1]>0) and math.random(4)<=pr[s+1] pl(s,m,cp) cp=m else glp(s,2,0) gr=-1 wr(s,hd) end end function pl(s,m,mp) if arp then apl(s,m) return end if not m then if not legato then ao() end return end if not legato then xo(s,not(keep_ties and mp)) end for v=1,4 do local n=rn[v][s+1] if n>=0 and not on[n] then gms(ch,144,n,rv[v][s+1]) on[n]=1 end end if legato then xo(s,false) end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function go() ts(true) ao() counter=-1 cp=false pd={} gr=-1 ai=0 al=0 ac=ar-1 apn={} apv={} extclk=true bc=false mc=cd-1 end function rt(b) if b==248 then if bc then go() end if extclk then mc=(mc+1)%cd if mc==0 then sq() if nd then cd=nd nd=nil end end if arp then apt() end end elseif b==250 or b==251 then go() elseif b==252 then extclk=false bc=false ts(false) if nd then cd=nd nd=nil end ns() end end function ns() ao() for i=0,15 do glp(i,2,0) end hd={} pd={} gr=-1 cp=false end function ts(x) astop=not x if x then gtp(3) else gtt(3,500) end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function cs(s) if gw~=s then gw=s if not overdub then local z=s+1 for v=1,4 do rn[v][z]=nil rv[v][z]=nil end ow[z]=1 end end end function wr(s,t) if armed and next(t) then cs(s) local c=0 for n=0,127 do local x=t[n] if x then ad(s,n,x) c=c+1 if c>3 then break end end end ele[s]:bva(127) eled() acu() end end function ad(s,n,x) local z=s+1 for v=1,4 do if rn[v][z]==n then rv[v][z]=x return end end for v=1,4 do if rn[v][z]<0 then rn[v][z]=n rv[v][z]=x return end end if overdub then local v=ow[z] or 1 rn[v][z]=n rv[v][z]=x ow[z]=v%4+1 end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function apl(s,m) apn={} apv={} if not m then ak() return end for o=0,oct-1 do for v=1,4 do local n=rn[v][s+1] if n>=0 and n+o*12<128 then apn[#apn+1]=n+o*12 apv[#apv+1]=rv[v][s+1] end end end for i=1,#apn do for j=i+1,#apn do if apn[j]<apn[i] then apn[i],apn[j]=apn[j],apn[i] apv[i],apv[j]=apv[j],apv[i] end end end if #apn==0 then ak() end end function asn() local l=#apn if l==0 then return end local k if am==4 then k=math.random(l) if l>1 and k==al then k=k%l+1 end al=k else local q=ai if am==1 then k=q%l+1 elseif am==2 then k=l-q%l else local z=l<2 and 0 or q%(l*2-2) k=z<l and z+1 or l*2-z-1 end ai=ai+1 end local n=apn[k] if an==n and keep_ties then return end ag(n,apv[k]) end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if astop and not extclk then gis(-1,0,'if al then al(false) end') end astop=false"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) arp=false am=1 ari=3 ar=6 oct=1 ac=5 ai=0 al=0 an=-1 apn={} apv={} function ak() if an>=0 then gms(ch,144,an,0) an=-1 end end function ag(n,v) if legato and an>=0 and an~=n then gms(ch,144,n,v) gms(ch,144,an,0) else ak() gms(ch,144,n,v) end an=n end function apo(x) arp=x ao() ai=0 al=0 ac=ar-1 apn={} apv={} acu() print(\"arp=\"..tostring(arp)) end function acu() if arp and extclk then apl((counter//2)%step_len,cp) end end function apt() ac=(ac+1)%ar if ac==0 then asn() elseif ac==ar-1 and not legato and not keep_ties then ak() end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) U={r={},v={},b={},p={}} B={r={},v={},b={},p={}} function cpy(a,b,c,d) for v=1,4 do c[v]=c[v] or {} d[v]=d[v] or {} for i=1,16 do c[v][i]=a[v][i] d[v][i]=b[v][i] end end end function snap(k) cpy(rn,rv,k.r,k.v) for i=0,15 do k.b[i]=ele[i]:bva() k.p[i+1]=pr[i+1] end k.l=step_len k.ok=true end function rest(k) if k.ok then ao() cp=false ow={} cpy(k.r,k.v,rn,rv) for i=0,15 do ele[i]:bva(k.b[i]) pr[i+1]=k.p[i+1] end sln(k.l) eled() acu() end end function save_take() snap(U) end function undo() rest(U) end function save_buf() snap(B) end function load_buf() rest(B) end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function trans(d) save_take() for v=1,4 do for i=1,16 do if rn[v][i]>=0 then rn[v][i]=cl(rn[v][i]+d,0,127) end end end eled() acu() end function quant(r) if r then cpy(U.r,U.v,rn,rv) else save_take() end local m=sm[sc] for i=1,16 do for v=1,4 do local n=rn[v][i] if n>=0 then local b,e=n,999 local o=(n-root)//12*12 for j=1,#m do for z=-12,12,12 do local t=root+o+m[j]+z local d=math.abs(n-t) if d<e then e,b=d,t end end end rn[v][i]=cl(b,0,127) end end end eled() acu() end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) sm={{0,1,2,3,4,5,6,7,8,9,10,11},{0,2,4,5,7,9,11},{0,2,3,5,7,9,10},{0,1,3,5,7,8,10},{0,2,4,6,7,9,11},{0,2,4,5,7,9,10},{0,2,3,5,7,8,10},{0,1,3,5,6,8,10}} sc=2 sch=false uv=0 root=0 function sv() local c=({{0,220,90},{255,35,45},{255,125,0},{255,220,0},{0,255,160},{0,100,255},{100,0,180},{220,0,255}})[sc] glc(13,1,c[1],c[2],c[3]) glp(13,1,255) end function randvel() save_take() local c=0 for i=1,16 do if rec[i]>=0 and ele[i-1]:bva()>0 then local d=math.random(-40,40) for v=1,4 do if rn[v][i]>=0 then rv[v][i]=cl(rv[v][i]+d,1,127) end end c=c+1 end end eled() acu() print(\"random vel:\"..c) end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) pr={} for i=1,16 do pr[i]=4 end pb={64,128,192,255} pch=false function clearseq() save_take() ao() cp=false apn={} apv={} ow={} eu=0 ehits=step_len euclid() for v=1,4 do for i=1,16 do rn[v][i]=nil rv[v][i]=nil end end for i=0,15 do pr[i+1]=4 ele[i]:bva(0) end eled() end function pbs(x) prob_edit=x pch=false eled() end function randprob() save_take() for i=1,step_len do if ele[i-1]:bva()>0 then local x=math.random(10) pr[i]=x<2 and 1 or x<4 and 2 or x<7 and 3 or 4 end end eled() print(\"chance random\") end function pe(s,d) local z=s+1 if s<step_len and ele[s]:bva()>0 then local o=pr[z] local n=cl(o+d,1,4) if n~=o then if not pch then save_take() pch=true end pr[z]=n pv() print(\"chance\",n*25) end end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) eu=0 ehits=16 erot=0 em={} for i=1,16 do em[i]=1 end function euclid() local n=step_len ehits=cl(ehits,1,n) for i=1,16 do em[i]=1 end if eu==1 then for i=1,n do em[i]=((i-1+erot)%n*ehits%n<ehits) and 1 or 0 end end end function eon(t) if t then eu=1-eu else eu=1 ehits=ehits%step_len+1 end euclid() eled() acu() print(\"eu \"..eu..\" \"..ehits..\"/\"..step_len) end function sln(l) step_len=l counter=counter%(l*2) euclid() for i=l,15 do glp(i,2,0) end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 10,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function vc(s) local c=0 for v=1,4 do if rn[v][s+1]>=0 then c=c+1 end end return c end function rl(i) local c=vc(i) if c>0 and ele[i]:bva()>0 then glc(i,1,0,255,0) glp(i,1,100+c*35) else glc(i,1,0,0,255) glp(i,1,80) end end function pv() for i=0,15 do local a=i<step_len and ele[i]:bva()>0 local q=pb[pr[i+1]] glc(i,1,0,a and q or 0,a and q//3 or 255) glp(i,1,a and 255 or 12) end end function eled() if prob_edit then pv() elseif sx then sxv() else for i=0,15 do rl(i) if eu==1 and i<step_len and em[i+1]==0 then glc(i,1,80,0,120) glp(i,1,35) end end end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 11,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function sxv() if uv==1 then sl() elseif uv==2 then cdv() else setv() end end function setv() for i=0,15 do glc(i,1,20,20,20) glp(i,1,8) end for i=8,10 do glc(i,1,220,0,255) end glp(8,1,am*60) glp(9,1,ari*60) glp(10,1,oct*80) glc(12,1,220,0,255) glp(12,1,cti*80) sv() glc(14,1,255,80,0) glp(14,1,step_len*15) glc(15,1,0,180,255) glp(15,1,cdi*48) end function sl() for i=0,15 do local c=vc(i) local q=c>0 and ele[i]:bva()>0 if i<step_len then glc(i,1,0,q and 255 or 80,255) glp(i,1,q and 100+c*35 or 60) else glc(i,1,255,0,80) glp(i,1,20) end end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 12,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) st=st or {} function csl(t,l,i,d,k) i=cl(i+d,1,#t) local x=t[i] if extclk then nd=x else cd=x nd=nil end ct=k print(\"clock \"..l[i]) return i end function enc(n,e) local d=e>0 and 1 or -1 if prob_edit then pe(n,d) elseif sx then if st[n] then st[n](d) end else ed(n,e) end end st[8]=function(d) am=cl(am+d,1,4) ai=0 al=0 uv=0 setv() print(\"arp mode \"..({\"up\",\"down\",\"up/down\",\"random\"})[am]) end st[9]=function(d) ari=cl(ari+d,1,4) ar=({12,8,6,4})[ari] ac=ac%ar uv=0 setv() print(\"arp rate \"..({\"1/8\",\"1/12\",\"1/16\",\"1/16T\"})[ari]) end st[10]=function(d) oct=cl(oct+d,1,3) acu() uv=0 setv() print(\"arp oct \"..oct) end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 13,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) st=st or {} st[12]=function(d) cti=csl({16,8,4},{\"1/3\",\"1/6\",\"1/12\"},cti,d,true) uv=2 cdv() end st[13]=function(d) if not sch then save_take() sch=true end sc=cl(sc+d,1,8) uv=0 quant(true) print(\"scale \"..({\"chromatic\",\"major\",\"dorian\",\"phrygian\",\"lydian\",\"mixolydian\",\"aeolian\",\"locrian\"})[sc]) end st[14]=function(d) sln(cl(step_len+d,1,16)) acu() uv=1 sl() print(\"step length:\"..step_len) end st[15]=function(d) cdi=csl({48,24,12,6,3},{\"1/1\",\"1/2\",\"1/4\",\"1/8\",\"1/16\"},cdi,d,false) uv=2 cdv() end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 14,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) rx(e[2],e[3],e[4]) end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 15,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) gtt(15,200) function rx(c,n,v) if c==144 and v>0 then if armed then hd[n]=v if gr>=0 then cs(gr) ad(gr,n,v) ele[gr]:bva(127) eled() acu() else pd[n]=v end end elseif c==128 or c==144 then hd[n]=nil elseif c==176 and n==123 and v==0 then ns() end end function cdv() local n=48//(nd or cd) local r,g,b=0,170,255 if ct then r,g,b=220,0,255 end for i=0,15 do glc(i,1,20,20,20) glp(i,1,12) end for i=0,n-1 do local p=i*16//n glc(p,1,r,g,b) glp(p,1,255) end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] eled() acu()"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] eled()"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] counter=-1 armed=false overdub=false step_len=16 shift=false vel_edit=false prob_edit=false sx=false keep_ties=true legato=false ch=0 extclk=false bc=true astop=false mc=0 cd=3 cdi=5 cti=3 nd=nil ct=false gr=-1 gw=-1 cp=false on={} hd={} pd={} ow={} nm={__index=function() return -1 end} vm={__index=function() return 100 end} rn={} rv={} for v=1,4 do rn[v]=setmetatable({},nm) rv[v]=setmetatable({},vm) end rec=rn[1] function cl(x,a,b) return math.max(a,math.min(b,x)) end function ed(s,e) if sx or rec[s+1]<0 then return end local z=s+1 local x=vel_edit and e*5 or shift and (e>0 and 12 or -12) or e for v=1,4 do local n=rn[v][z] if n>=0 then if vel_edit then rv[v][z]=cl(rv[v][z]+x,1,127) else rn[v][z]=cl(n+x,0,127) end end end glc(s,1,vel_edit and 255 or 0,vel_edit and 128 or 255,0) glp(s,1,vel_edit and rv[1][z]*2 or rn[1][z]*2) acu() end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] "
+                }
+            ]
+        }
+    ],
+    "owner": "VUsN5I1iJ6eA2DWkxmpVHlSVGRi2",
+    "virtualPath": "",
+    "cloudId": "P6syn3yieOWEHDUBi4Ml",
+    "fileName": " 1.json",
+    "isEditable": true,
+    "syncStatus": "synced",
+    "public": false
+}
