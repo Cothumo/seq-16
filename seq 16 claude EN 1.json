@@ -38,7 +38,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function go() ts(true) ao() counter=-1 cp=false pd={} gr=-1 ai=0 al=0 ac=ar-1 apn={} apv={} extclk=true bc=false mc=cd-1 end function rt(b) if b==248 then if bc then go() end if extclk then mc=(mc+1)%cd if mc==0 then sq() if nd then cd=nd nd=nil end end if arp then apt() end end elseif b==250 or b==251 then go() elseif b==252 then extclk=false bc=false ts(false) if nd then cd=nd nd=nil end ns() end end function ns() ao() for i=0,15 do glp(i,2,0) end hd={} pd={} gr=-1 cp=false end function ts(x) astop=not x if x then gtp(3) else gtt(3,500) end end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function go(r) ts(true) ao() if not r then counter=-1 mc=cd-1 ac=ar-1 end cp=false pd={} gr=-1 ai=0 al=0 apn={} apv={} extclk=true bc=false end function rt(b) if b==248 then if bc then go() end if extclk then mc=(mc+1)%cd if mc==0 then sq() if nd then cd=nd nd=nil end end if arp then apt() end end elseif b==250 then go() elseif b==251 then go(true) elseif b==252 then extclk=false bc=false ts(false) if nd then cd=nd nd=nil end ns() end end function ns() ao() for i=0,15 do glp(i,2,0) end hd={} pd={} gr=-1 cp=false end function ts(x) astop=not x if x then gtp(3) else gtt(3,500) end end"
                 },
                 {
                     "event": 3,
@@ -311,7 +311,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) rx(e[2],e[3],e[4]) end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) if e[2]==240 then if e[1]==2 then sp((e[3]+e[4]*128)*6) end else rx(e[2],e[3],e[4]) end end function sp(t) counter=(-(-t//cd)-1)%(step_len*2) mc=(t-1)%cd ac=(t-1)%ar end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
                 },
                 {
                     "event": 3,
@@ -353,7 +353,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] counter=-1 armed=false overdub=false step_len=16 shift=false vel_edit=false prob_edit=false sx=false keep_ties=true legato=false ch=0 extclk=false bc=true astop=false mc=0 cd=3 cdi=5 cti=3 nd=nil ct=false gr=-1 gw=-1 cp=false on={} hd={} pd={} ow={} nm={__index=function() return -1 end} vm={__index=function() return 100 end} rn={} rv={} for v=1,4 do rn[v]=setmetatable({},nm) rv[v]=setmetatable({},vm) end rec=rn[1] function cl(x,a,b) return math.max(a,math.min(b,x)) end function ed(s,e) if sx or rec[s+1]<0 then return end local z=s+1 local x=vel_edit and e*5 or shift and (e>0 and 12 or -12) or e for v=1,4 do local n=rn[v][z] if n>=0 then if vel_edit then rv[v][z]=cl(rv[v][z]+x,1,127) else rn[v][z]=cl(n+x,0,127) end end end glc(s,1,vel_edit and 255 or 0,vel_edit and 128 or 255,0) glp(s,1,vel_edit and rv[1][z]*2 or rn[1][z]*2) acu() end"
+                    "config": "--[[@cb]] counter=-1 armed=false overdub=false step_len=16 shift=false vel_edit=false prob_edit=false sx=false keep_ties=true legato=false ch=0 extclk=false bc=true astop=false mc=2 cd=3 cdi=5 cti=3 nd=nil ct=false gr=-1 gw=-1 cp=false on={} hd={} pd={} ow={} nm={__index=function() return -1 end} vm={__index=function() return 100 end} rn={} rv={} for v=1,4 do rn[v]=setmetatable({},nm) rv[v]=setmetatable({},vm) end rec=rn[1] function cl(x,a,b) return math.max(a,math.min(b,x)) end function ed(s,e) if sx or rec[s+1]<0 then return end local z=s+1 local x=vel_edit and e*5 or shift and (e>0 and 12 or -12) or e for v=1,4 do local n=rn[v][z] if n>=0 then if vel_edit then rv[v][z]=cl(rv[v][z]+x,1,127) else rn[v][z]=cl(n+x,0,127) end end end glc(s,1,vel_edit and 255 or 0,vel_edit and 128 or 255,0) glp(s,1,vel_edit and rv[1][z]*2 or rn[1][z]*2) acu() end"
                 },
                 {
                     "event": 4,
