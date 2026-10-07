@@ -21,11 +21,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -42,11 +42,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -63,11 +63,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -84,11 +84,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -105,11 +105,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -126,11 +126,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -147,11 +147,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -168,11 +168,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -189,11 +189,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -210,11 +210,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -231,11 +231,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -252,11 +252,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -273,11 +273,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -294,11 +294,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -311,15 +311,15 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) if e[2]==240 then if e[1]==2 then sp((e[3]+e[4]*128)*6) end else rx(e[2],e[3],e[4]) end end function sp(t) counter=(-(-t//cd)-1)%(step_len*2) mc=(t-1)%cd ac=(t-1)%ar end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) if e[2]==240 then if e[1]==2 then sp((e[3]+e[4]*128)*6) end elseif rx then rx(e[2],e[3],e[4]) end end function sp(t) counter=(-(-t//cd)-1)%(step_len*2) mc=(t-1)%cd ac=(t-1)%ar end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
@@ -336,11 +336,11 @@
                 },
                 {
                     "event": 3,
-                    "config": "--[[@cb]] eled() acu()"
+                    "config": "--[[@cb]] if eled then eled() acu() end"
                 },
                 {
                     "event": 2,
-                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 then enc(self:ind(),e) end"
+                    "config": "--[[@cb]] local e=self:est()-64 if e~=0 and enc then enc(self:ind(),e) end"
                 },
                 {
                     "event": 6,
