@@ -38,7 +38,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function go(r) ts(true) ao() if not r then counter=-1 mc=cd-1 ac=ar-1 end cp=false pd={} gr=-1 ai=0 al=0 apn={} apv={} extclk=true bc=false end function rt(b) if b==248 then if bc then go() end if extclk then mc=(mc+1)%cd if mc==0 then sq() if nd then cd=nd nd=nil end end if arp then apt() end end elseif b==250 then go() elseif b==251 then go(true) elseif b==252 then extclk=false bc=false ts(false) if nd then cd=nd nd=nil end ns() end end function ns() ao() for i=0,15 do glp(i,2,0) end hd={} pd={} gr=-1 cp=false end function ts(x) astop=not x if x then gtp(3) else gtt(3,500) end end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function go(r) ts(true) ao() if not r then counter=-1 mc=cd-1 tk=0 end cp=false pd={} gr=-1 ai=0 al=0 apn={} apv={} extclk=true bc=false end function rt(b) if b==248 then if bc then go() end if extclk then mc=(mc+1)%cd if mc==0 then sq() if nd then cd=nd nd=nil end end if arp then apt() end tk=tk+1 end elseif b==250 then go() elseif b==251 then go(true) elseif b==252 then extclk=false bc=false ts(false) if nd then cd=nd nd=nil end ns() end end function ns() ao() for i=0,15 do glp(i,2,0) end hd={} pd={} gr=-1 cp=false end function ts(x) astop=not x if x then gtp(3) else gtt(3,500) end end"
                 },
                 {
                     "event": 3,
@@ -80,7 +80,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function apl(s,m) apn={} apv={} if not m then ak() return end for o=0,oct-1 do for v=1,4 do local n=rn[v][s+1] if n>=0 and n+o*12<128 then apn[#apn+1]=n+o*12 apv[#apv+1]=rv[v][s+1] end end end for i=1,#apn do for j=i+1,#apn do if apn[j]<apn[i] then apn[i],apn[j]=apn[j],apn[i] apv[i],apv[j]=apv[j],apv[i] end end end if #apn==0 then ak() end end function asn() local l=#apn if l==0 then return end local k if am==4 then k=math.random(l) if l>1 and k==al then k=k%l+1 end al=k else local q=ai if am==1 then k=q%l+1 elseif am==2 then k=l-q%l else local z=l<2 and 0 or q%(l*2-2) k=z<l and z+1 or l*2-z-1 end ai=ai+1 end local n=apn[k] if an==n and keep_ties then return end ag(n,apv[k]) end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) function apl(s,m) apn={} apv={} if not m then ak() return end local u={} for o=0,oct-1 do for v=1,4 do local n=rn[v][s+1] local x=n+o*12 if n>=0 and x<128 and not u[x] then u[x]=1 apn[#apn+1]=x apv[#apv+1]=rv[v][s+1] end end end for i=1,#apn do for j=i+1,#apn do if apn[j]<apn[i] then apn[i],apn[j]=apn[j],apn[i] apv[i],apv[j]=apv[j],apv[i] end end end if #apn==0 then ak() end end function asn() local l=#apn if l==0 then return end local k if am==4 then k=math.random(l) if l>1 and k==al then k=k%l+1 end al=k else local q=ai if am==1 then k=q%l+1 elseif am==2 then k=l-q%l else local z=l<2 and 0 or q%(l*2-2) k=z<l and z+1 or l*2-z-1 end ai=ai+1 end ag(apn[k],apv[k]) end"
                 },
                 {
                     "event": 3,
@@ -101,7 +101,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) arp=false am=1 ari=3 ar=6 oct=1 ac=5 ai=0 al=0 an=-1 apn={} apv={} function ak() if an>=0 then gms(ch,144,an,0) an=-1 end end function ag(n,v) if legato and an>=0 and an~=n then gms(ch,144,n,v) gms(ch,144,an,0) else ak() gms(ch,144,n,v) end an=n end function apo(x) arp=x ao() ai=0 al=0 ac=ar-1 apn={} apv={} acu() print(\"arp=\"..tostring(arp)) end function acu() if arp and extclk then apl((counter//2)%step_len,cp) end end function apt() ac=(ac+1)%ar if ac==0 then asn() elseif ac==ar-1 and not legato and not keep_ties then ak() end end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) arp=false am=1 ari=3 ar=6 oct=1 tk=0 ai=0 al=0 an=-1 apn={} apv={} function ak() if an>=0 then gms(ch,144,an,0) an=-1 end end function ag(n,v) if legato and an>=0 and an~=n then gms(ch,144,n,v) gms(ch,144,an,0) else ak() gms(ch,144,n,v) end an=n end function apo(x) arp=x ao() ai=0 al=0 apn={} apv={} acu() print(\"arp=\"..tostring(arp)) end function acu() if arp and extclk then apl((counter//2)%step_len,cp) end end function apt() local p=tk%ar if p==0 then asn() elseif p==ar-1 and not legato then ak() end end"
                 },
                 {
                     "event": 3,
@@ -269,7 +269,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) st=st or {} function csl(t,l,i,d,k) i=cl(i+d,1,#t) local x=t[i] if extclk then nd=x else cd=x nd=nil end ct=k print(\"clock \"..l[i]) return i end function enc(n,e) local d=e>0 and 1 or -1 if prob_edit then pe(n,d) elseif sx then if st[n] then st[n](d) end else ed(n,e) end end st[8]=function(d) am=cl(am+d,1,4) ai=0 al=0 uv=0 setv() print(\"arp mode \"..({\"up\",\"down\",\"up/down\",\"random\"})[am]) end st[9]=function(d) ari=cl(ari+d,1,4) ar=({12,8,6,4})[ari] ac=ac%ar uv=0 setv() print(\"arp rate \"..({\"1/8\",\"1/12\",\"1/16\",\"1/16T\"})[ari]) end st[10]=function(d) oct=cl(oct+d,1,3) acu() uv=0 setv() print(\"arp oct \"..oct) end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) st=st or {} function csl(t,l,i,d,k) i=cl(i+d,1,#t) local x=t[i] if extclk then nd=x else cd=x nd=nil end ct=k print(\"clock \"..l[i]) return i end function enc(n,e) local d=e>0 and 1 or -1 if prob_edit then pe(n,d) elseif sx then if st[n] then st[n](d) end else ed(n,e) end end st[8]=function(d) am=cl(am+d,1,4) ai=0 al=0 uv=0 setv() print(\"arp mode \"..({\"up\",\"down\",\"up/down\",\"random\"})[am]) end st[9]=function(d) ari=cl(ari+d,1,4) ar=({12,8,6,4})[ari] uv=0 setv() print(\"arp rate \"..({\"1/8\",\"1/12\",\"1/16\",\"1/16T\"})[ari]) end st[10]=function(d) oct=cl(oct+d,1,3) acu() uv=0 setv() print(\"arp oct \"..oct) end"
                 },
                 {
                     "event": 3,
@@ -311,7 +311,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) if e[2]==240 then if e[1]==2 then sp((e[3]+e[4]*128)*6) end elseif rx then rx(e[2],e[3],e[4]) end end function sp(t) counter=(-(-t//cd)-1)%(step_len*2) mc=(t-1)%cd ac=(t-1)%ar end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
+                    "config": "--[[@sec]] self:emo(1)self:ev0(50)self:emi(0)self:ema(127)self:ese(100)--[[@sbc]] self:bmo(1)--[[@cb]] self:bva(0)glc(self:ind(),2,127,127,127,1)glp(self:ind(),2,0) local z=ele[#ele] z.rtmrx_cb=function(s,h,b) rt(b) end z.midirx_cb=function(s,h,e) if e[2]==240 then if e[1]==2 then sp((e[3]+e[4]*128)*6) end elseif rx then rx(e[2],e[3],e[4]) end end function sp(t) counter=(-(-t//cd)-1)%(step_len*2) mc=(t-1)%cd tk=t end grxm(2,3) function xo(s,a) for n in pairs(on) do if a or not hs(s,n) then gms(ch,144,n,0) on[n]=nil end end end function ao() ak() xo(0,true) end function hs(s,n) for v=1,4 do if rn[v][s+1]==n then return true end end return false end"
                 },
                 {
                     "event": 3,
